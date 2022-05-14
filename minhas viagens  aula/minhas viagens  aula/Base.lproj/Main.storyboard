@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1Ep-Zh-94F">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Minhas Viagens-->
+        <scene sceneID="oWi-oz-d53">
+            <objects>
+                <tableViewController id="Kej-zx-LMj" customClass="LocaisViagemTableViewController" customModule="minhas_viagens__aula" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="MMi-av-asz" customClass="LocaisViagensTableViewController">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="sectionIndexColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="celulaReuso" id="rIc-g1-yr6">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rIc-g1-yr6" id="9jD-lI-atp">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Kej-zx-LMj" id="ABr-cD-g1K"/>
+                            <outlet property="delegate" destination="Kej-zx-LMj" id="6vQ-qy-Rqv"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Minhas Viagens" id="iuI-SK-eWy" customClass="Locais">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="yNe-fD-liU">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="NPF-8n-Phv" kind="show" identifier="verLocal" id="rXl-mP-Iye"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GkW-pE-SsQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="900" y="-264"/>
+        </scene>
+        <!--Mapa-->
+        <scene sceneID="OiI-NU-ojS">
+            <objects>
+                <viewController id="NPF-8n-Phv" customClass="ViewController" customModule="minhas_viagens__aula" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="f5z-cd-jQv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mcV-4u-sdQ">
+                                <rect key="frame" x="0.0" y="88" width="414" height="720"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="mcV-4u-sdQ" firstAttribute="top" secondItem="Lvq-X7-fjQ" secondAttribute="top" id="2oD-PJ-60p"/>
+                            <constraint firstItem="mcV-4u-sdQ" firstAttribute="centerX" secondItem="f5z-cd-jQv" secondAttribute="centerX" id="Dlb-ba-2qC"/>
+                            <constraint firstItem="mcV-4u-sdQ" firstAttribute="leading" secondItem="Lvq-X7-fjQ" secondAttribute="leading" id="EeJ-TY-ycb"/>
+                            <constraint firstItem="mcV-4u-sdQ" firstAttribute="centerX" secondItem="f5z-cd-jQv" secondAttribute="centerX" id="FVz-X6-IyJ"/>
+                            <constraint firstItem="mcV-4u-sdQ" firstAttribute="centerY" secondItem="f5z-cd-jQv" secondAttribute="centerY" id="R2a-jY-Fl5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Lvq-X7-fjQ"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Mapa" id="2vL-dm-zjR"/>
+                    <connections>
+                        <outlet property="mapa" destination="mcV-4u-sdQ" id="M8f-6E-AQr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IeQ-sf-pKE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1595.6521739130435" y="-265.17857142857144"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cuq-I6-Ul5">
+            <objects>
+                <navigationController id="1Ep-Zh-94F" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ik9-WI-jk6">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.53096529015136207" green="0.81596182472381129" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Kej-zx-LMj" kind="relationship" relationship="rootViewController" id="8Xu-44-wFd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e5I-pE-ojW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-20" y="-264"/>
+        </scene>
+    </scenes>
+</document>

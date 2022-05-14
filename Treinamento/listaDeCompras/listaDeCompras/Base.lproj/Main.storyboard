@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GNI-L8-bF1">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Lista de Compras-->
+        <scene sceneID="FzS-mW-fDE">
+            <objects>
+                <tableViewController id="Iwf-sP-iBU" customClass="ListaComprasTableViewController" customModule="listaDeCompras" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="lq2-sH-Fay">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="celula" id="Lcd-HH-cBm">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lcd-HH-cBm" id="SCx-dE-1WD" customClass="UITableViewCell">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Iwf-sP-iBU" id="72Y-MG-Vbg"/>
+                            <outlet property="delegate" destination="Iwf-sP-iBU" id="XLx-4M-ThM"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Lista de Compras" id="Bga-BY-Qsh">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="R7G-Yr-3EI">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="p2Y-jr-fhn" kind="show" identifier="verCompras" id="6lO-ex-Ik2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KZk-G2-kw4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6" y="-23"/>
+        </scene>
+        <!--Adicionar Produto-->
+        <scene sceneID="Moi-MQ-5BZ">
+            <objects>
+                <viewController id="p2Y-jr-fhn" customClass="ComprasViewController" customModule="listaDeCompras" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9am-jc-H7I">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="..." translatesAutoresizingMaskIntoConstraints="NO" id="QdO-bc-EgR">
+                                <rect key="frame" x="20" y="88" width="374" height="720"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="QdO-bc-EgR" firstAttribute="centerY" secondItem="9am-jc-H7I" secondAttribute="centerY" id="J1o-eR-MVD"/>
+                            <constraint firstItem="QdO-bc-EgR" firstAttribute="centerX" secondItem="9am-jc-H7I" secondAttribute="centerX" id="pHH-UO-dK8"/>
+                            <constraint firstItem="QdO-bc-EgR" firstAttribute="leading" secondItem="9am-jc-H7I" secondAttribute="leadingMargin" id="v8u-qP-0YL"/>
+                            <constraint firstItem="QdO-bc-EgR" firstAttribute="top" secondItem="lDL-QU-q24" secondAttribute="top" id="zu5-gu-4ZH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lDL-QU-q24"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Adicionar Produto" id="EC0-4x-vPB">
+                        <barButtonItem key="rightBarButtonItem" title="Salvar" style="done" id="Iwz-Ng-0gI">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="salvar:" destination="p2Y-jr-fhn" id="wYs-OK-JV4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="texto" destination="QdO-bc-EgR" id="Nud-Q3-93M"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="398-fa-8Bk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="868" y="-23"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="vT9-am-JoK">
+            <objects>
+                <navigationController id="GNI-L8-bF1" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" alpha="0.80000000000000004" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CTI-hC-qiI">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.52941176470588236" green="0.81568627450980391" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Iwf-sP-iBU" kind="relationship" relationship="rootViewController" id="EGb-3F-Ig2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Osr-YN-qTY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-812" y="-23"/>
+        </scene>
+    </scenes>
+</document>
